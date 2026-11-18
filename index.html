@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>LitBuy spreadsheet | Product Finds, QC &amp; Shipping Checklist</title>
+  <meta name="description" content="Browse LitBuy spreadsheet finds from HipobuyFind. Compare reference prices for shoes and clothing, save a shortlist, and check sizing, QC photos and shipping.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LitBuy spreadsheet | Product Finds, QC &amp; Shipping Checklist">
+  <meta property="og:description" content="Compare product finds from HipobuyFind, download a CSV, and check what to verify before shipping.">
+  <!--
+    Save as index.html.
+    Search review: litbuy.works combines a catalog with an order workflow,
+    litbuyex.com emphasizes category navigation, and rep.tools/guides/litbuy-spreadsheet
+    focuses on working with source links. The exact Google first-page order was
+    not independently verified for a specific country.
+    Catalog source: https://hipobuyfind.com/. Product links below identify the
+    individual listings. Titles are shortened and USD amounts are reference prices.
+    Indexing status: not submitted. A public deployment URL is required.
+    After deployment, add a self-referencing canonical using the public URL.
+    Use URL Inspection > Request Indexing in Google Search Console, and
+    URL Submission in Bing Webmaster Tools, for the verified public URL.
+    Google: https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl
+    Bing: https://www.bing.com/webmasters/help/URL-Submission-62f2860b
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "LitBuy spreadsheet",
+    "description": "An independent guide with a selected HipobuyFind catalog, a downloadable shortlist, and checks for sizing, quality control and shipping.",
+    "inLanguage": "en",
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Black and red basketball shoes","url":"https://hipobuyfind.com/goods-149969.html"},
+        {"@type":"ListItem","position":2,"name":"Gray pullover hoodie","url":"https://hipobuyfind.com/goods-154936.html"},
+        {"@type":"ListItem","position":3,"name":"Canvas low-tops with gum soles","url":"https://hipobuyfind.com/goods-148188.html"},
+        {"@type":"ListItem","position":4,"name":"Graphic tee","url":"https://hipobuyfind.com/goods-154920.html"},
+        {"@type":"ListItem","position":5,"name":"Quick-dry hooded jacket","url":"https://hipobuyfind.com/goods-154851.html"},
+        {"@type":"ListItem","position":6,"name":"Fleece-lined hoodie","url":"https://hipobuyfind.com/goods-154917.html"}
+      ]
+    }
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #182b24;
+      --muted: #50645b;
+      --paper: #f7f6ef;
+      --forest: #153a30;
+      --lime: #d7ef9a;
+      --line: #d8dfd4;
+      --white: #fff;
+      font-family: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+      scroll-padding-top: 1rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.6; }
+    a { color: inherit; text-underline-offset: .2em; }
+    button, input, select { font: inherit; }
+    button, select, summary { cursor: pointer; }
+    :focus-visible { outline: 3px solid #397c61; outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    img { display: block; width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2 { line-height: 1.04; letter-spacing: -.045em; }
+    h1 { font-size: clamp(3.25rem, 8vw, 7rem); margin-bottom: .3em; }
+    h2 { font-size: clamp(2.15rem, 5vw, 3.6rem); margin-bottom: .3em; }
+    h3 { line-height: 1.25; }
+    .wrap { width: min(1100px, calc(100% - 2rem)); margin-inline: auto; }
+    .skip { position: absolute; top: -5rem; left: 1rem; padding: .7rem 1rem; background: var(--white); z-index: 5; }
+    .skip:focus { top: 1rem; }
+    .top { border-bottom: 1px solid var(--line); }
+    .bar, nav, .actions { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem 1.25rem; }
+    .bar { justify-content: space-between; padding-block: .85rem; }
+    .brand { font-weight: 800; text-decoration: none; }
+    nav a { font-size: .9rem; padding-block: .3rem; }
+    .hero { padding-block: clamp(4rem, 10vw, 8rem); text-align: center; color: var(--white); background: radial-gradient(ellipse at 50% 0%, #376651, var(--forest) 67%); }
+    .hero p { max-width: 37rem; margin: 0 auto 1.5rem; color: #e1eee6; }
+    .actions { justify-content: center; gap: .7rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .6rem 1.1rem; border: 1px solid transparent; border-radius: 999px; background: var(--lime); color: var(--ink); font-weight: 750; text-decoration: none; }
+    .button:hover { background: #e6f6bd; }
+    .button.secondary { background: transparent; border-color: #afc7b8; color: var(--white); }
+    .button.secondary:hover { background: #ffffff17; }
+    .hero :focus-visible { outline-color: var(--lime); }
+    section { padding-block: clamp(2.5rem, 6vw, 4.75rem); }
+    .intro { color: var(--muted); max-width: 68ch; }
+    .controls { display: flex; flex-wrap: wrap; align-items: end; gap: .65rem 1rem; margin-top: 1.45rem; }
+    .controls label { display: grid; gap: .25rem; font-weight: 650; }
+    .controls .search { flex: 1 1 16rem; }
+    .controls input, .controls select { min-height: 46px; min-width: 0; padding: .55rem .8rem; border: 1px solid #9cae9f; border-radius: .55rem; background: var(--white); color: var(--ink); }
+    .controls input { width: 100%; }
+    .controls button { border-color: #a1b480; }
+    .controls button:disabled { opacity: .55; cursor: default; }
+    .status { min-height: 1.6em; margin: .65rem 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .card { min-width: 0; overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: 1rem; }
+    .card img { aspect-ratio: 4 / 3; height: auto; object-fit: contain; background: #eef0eb; }
+    .card-body { padding: 1rem; }
+    .card h3 { margin: .35rem 0; font-size: 1.15rem; }
+    .label { color: var(--muted); font-size: .82rem; margin: 0; }
+    .price { font-weight: 750; margin: .4rem 0 .75rem; }
+    .save { display: flex; gap: .5rem; align-items: center; min-height: 40px; padding-top: .4rem; font-size: .92rem; cursor: pointer; }
+    .save input { width: 1.15rem; height: 1.15rem; accent-color: var(--forest); }
+    .guide { background: #eaf0e4; }
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: 0; margin: 1.5rem 0 0; list-style: none; }
+    .steps li { background: #ffffffb0; border-radius: .8rem; padding: 1.1rem; }
+    .steps h3 { margin-bottom: .4rem; }
+    .steps p, details p { margin-bottom: 0; }
+    details { border-bottom: 1px solid var(--line); padding: .8rem 0; }
+    summary { padding-block: .25rem; font-weight: 750; }
+    details p { padding: .4rem 0; max-width: 73ch; }
+    footer { border-top: 1px solid var(--line); padding: 1.1rem 0; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 760px) { .grid, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 465px) { .grid, .steps { grid-template-columns: 1fr; } }
+  </style>
+<link rel="canonical" href="https://kakobuyfinds.github.io/tsdqm/">
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="#top">LitBuy spreadsheet guide</a>
+      <nav aria-label="Main navigation">
+        <a href="#catalog">Catalog</a>
+        <a href="#guide">Buying guide</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="wrap">
+        <h1 id="page-title">LitBuy spreadsheet</h1>
+        <p>Browse shoes and apparel from HipobuyFind, build a shortlist, and check sizing, QC photos and shipping costs before placing an order.</p>
+        <div class="actions">
+          <a class="button" href="https://hipobuyfind.com/" aria-label="LitBuy spreadsheet — opens HipobuyFind">LitBuy spreadsheet</a>
+          <a class="button secondary" href="https://hipobuyfind.com/" aria-label="Buy it now — visit HipobuyFind">Buy it now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="catalog" aria-labelledby="catalog-title">
+      <h2 id="catalog-title">Product catalog</h2>
+      <p class="intro">These selected HipobuyFind listings show approximate USD item prices. Open the product page to check the current price, variants and availability. Shipping and service fees are separate.</p>
+      <div class="controls" id="controls" hidden>
+        <label class="search">Search the catalog
+          <input id="search" type="search" placeholder="Try canvas, fleece or an item ID" autocomplete="off">
+        </label>
+        <label>Category
+          <select id="category">
+            <option value="">All categories</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Hoodies">Hoodies</option>
+            <option value="T-shirts">T-shirts</option>
+            <option value="Jackets">Jackets</option>
+          </select>
+        </label>
+        <button class="button" id="download" type="button" disabled>Download shortlist CSV</button>
+      </div>
+      <p class="status" id="status" role="status" hidden></p>
+      <div class="grid" id="listings">
+        <article class="card" data-category="Shoes" data-id="149969" data-usd="20.14">
+          <img src="https://si.geilicdn.com/open1623462477-1234478995-000d00000194e28adce90aa08290_1000_1000.jpg" alt="Black and red basketball shoes" width="400" height="300" loading="lazy" decoding="async">
+          <div class="card-body">
+            <p class="label">Shoes · Item 149969</p>
+            <h3><a href="https://hipobuyfind.com/goods-149969.html">Black and red basketball shoes</a></h3>
+            <p class="price">≈ $20.14 USD</p>
+          </div>
+        </article>
+        <article class="card" data-category="Hoodies" data-id="154936" data-usd="41.67">
+          <img src="https://si.geilicdn.com/open1792148229-1234478995-0daf00000196c1a57bec0aa0834c_1290_1290.jpg" alt="Gray pullover hoodie" width="400" height="300" loading="lazy" decoding="async">
+          <div class="card-body">
+            <p class="label">Hoodies · Item 154936</p>
+            <h3><a href="https://hipobuyfind.com/goods-154936.html">Gray pullover hoodie</a></h3>
+            <p class="price">≈ $41.67 USD</p>
+          </div>
+        </article>
+        <article class="card" data-category="Shoes" data-id="148188" data-usd="62.50">
+          <img src="https://si.geilicdn.com/open1700230128-1234478995-64a0000001987b40d1cb0a8115c2_1080_1440.jpg" alt="Black canvas low-top shoes with gum soles" width="400" height="300" loading="lazy" decoding="async">
+          <div class="card-body">
+            <p class="label">Shoes · Item 148188</p>
+            <h3><a href="https://hipobuyfind.com/goods-148188.html">Canvas low-tops with gum soles</a></h3>
+            <p class="price">≈ $62.50 USD</p>
+          </div>
+        </article>
+        <article class="card" data-category="T-shirts" data-id="154920" data-usd="14.58">
+          <img src="https://si.geilicdn.com/open1792148229-1234478995-09a000000196efa4b3cc0aa0834c_800_800.jpg" alt="Graphic short-sleeve tee" width="400" height="300" loading="lazy" decoding="async">
+          <div class="card-body">
+            <p class="label">T-shirts · Item 154920</p>
+            <h3><a href="https://hipobuyfind.com/goods-154920.html">Graphic tee</a></h3>
+            <p class="price">≈ $14.58 USD</p>
+          </div>
+        </article>
+        <article class="card" data-category="Jackets" data-id="154851" data-usd="21.83">
+          <img src="https://si.geilicdn.com/wdseller1489596767-2b4400000193c17bed690a210139_697_1024.jpg" alt="Quick-dry hooded jacket" width="400" height="300" loading="lazy" decoding="async">
+          <div class="card-body">
+            <p class="label">Jackets · Item 154851</p>
+            <h3><a href="https://hipobuyfind.com/goods-154851.html">Quick-dry hooded jacket</a></h3>
+            <p class="price">≈ $21.83 USD</p>
+          </div>
+        </article>
+        <article class="card" data-category="Hoodies" data-id="154917" data-usd="23.61">
+          <img src="https://si.geilicdn.com/open1792148229-1234478995-76d100000196f413b04f0a8133b0_800_800.jpg" alt="Fleece-lined hoodie" width="400" height="300" loading="lazy" decoding="async">
+          <div class="card-body">
+            <p class="label">Hoodies · Item 154917</p>
+            <h3><a href="https://hipobuyfind.com/goods-154917.html">Fleece-lined hoodie</a></h3>
+            <p class="price">≈ $23.61 USD</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide" id="guide" aria-labelledby="guide-title">
+      <div class="wrap">
+        <h2 id="guide-title">From product link to parcel</h2>
+        <ol class="steps">
+          <li>
+            <h3>Check the listing and size</h3>
+            <p>Open the HipobuyFind product page and choose LitBuy from the Buy Link menu if available. Confirm the item, color, size and current price in LitBuy. For clothing, compare the seller’s flat measurements with a garment you own.</p>
+          </li>
+          <li>
+            <h3>Review warehouse QC photos</h3>
+            <p>When warehouse photos are available, compare the size label, color, stitching and any visible damage with the listing. If a measurement matters, ask whether a photo with a measuring tape is available and check the return window.</p>
+          </li>
+          <li>
+            <h3>Estimate the delivered cost</h3>
+            <p>Add the item price, domestic delivery, agent fees, international shipping and any applicable import charges. Check whether the shipping quote uses actual or volumetric weight, especially for boxed shoes and bulky jackets.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="wrap" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">LitBuy spreadsheet FAQ</h2>
+      <details>
+        <summary>Can I download the spreadsheet?</summary>
+        <p>Tick the listings you want to compare and choose “Download shortlist CSV.” The file includes product names, item IDs, approximate USD prices and links, plus blank columns for size, QC status and shipping estimates.</p>
+      </details>
+      <details>
+        <summary>Where do the product listings come from?</summary>
+        <p>The product cards point to individual HipobuyFind listings. This independent guide uses a catalog snapshot. Check the linked listing for changes in price, stock and buying options.</p>
+      </details>
+      <details>
+        <summary>What if the LitBuy link is missing or expired?</summary>
+        <p>Check the original marketplace listing from the product page. If it is active, try its original link in LitBuy and confirm that the seller, photos and variants match before ordering. If the source has expired, look for another listing with a current size chart and seller details.</p>
+      </details>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">Independent LitBuy shopping guide. Product listings and reference prices sourced from <a href="https://hipobuyfind.com/">HipobuyFind</a>.</div>
+  </footer>
+  <script>
+    (() => {
+      const controls = document.querySelector("#controls");
+      const search = document.querySelector("#search");
+      const category = document.querySelector("#category");
+      const download = document.querySelector("#download");
+      const status = document.querySelector("#status");
+
+      const entries = Array.from(document.querySelectorAll(".card"), card => {
+        const link = card.querySelector("h3 a");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.setAttribute("aria-label", `Add ${link.textContent} to shortlist`);
+
+        const label = document.createElement("label");
+        label.className = "save";
+        label.append(checkbox, "Add to shortlist");
+        card.querySelector(".card-body").append(label);
+
+        return { card, link, checkbox };
+      });
+
+      function updateCatalog() {
+        const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+        let visible = 0;
+        let selected = 0;
+        for (const { card, link, checkbox } of entries) {
+          const searchable = `${link.textContent} ${card.dataset.category} ${card.dataset.id}`.toLowerCase();
+          const categoryMatches = !category.value || card.dataset.category === category.value;
+          card.hidden = !categoryMatches || !terms.every(term => searchable.includes(term));
+          visible += Number(!card.hidden);
+          selected += Number(checkbox.checked);
+        }
+        download.disabled = selected === 0;
+        const results = visible ? `Showing ${visible} of ${entries.length} listings.` : "No listings match. Try a different search or category.";
+        status.textContent = `${results} ${selected} selected.`;
+      }
+
+      function csvCell(value) {
+        return `"${String(value).replace(/"/g, '""')}"`;
+      }
+
+      download.addEventListener("click", () => {
+        const rows = [["Item ID", "Product", "Category", "Approximate USD", "HipobuyFind URL", "Size", "QC status", "Estimated shipping USD"]];
+        for (const { card, link, checkbox } of entries) {
+          if (checkbox.checked) {
+            rows.push([card.dataset.id, link.textContent, card.dataset.category, card.dataset.usd, link.href, "", "", ""]);
+          }
+        }
+        if (rows.length === 1) return;
+
+        const csv = rows.map(row => row.map(csvCell).join(",")).join("\r\n");
+        const url = URL.createObjectURL(new Blob(["\uFEFF", csv, "\r\n"], { type: "text/csv;charset=utf-8" }));
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = "litbuy-spreadsheet-shortlist.csv";
+        document.body.append(anchor);
+        anchor.click();
+        anchor.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      });
+
+      search.addEventListener("input", updateCatalog);
+      category.addEventListener("change", updateCatalog);
+      document.querySelector("#listings").addEventListener("change", updateCatalog);
+      updateCatalog();
+      controls.hidden = false;
+      status.hidden = false;
+    })();
+  </script>
+</body>
+</html>
